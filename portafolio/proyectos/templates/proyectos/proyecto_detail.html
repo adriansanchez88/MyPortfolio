@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block tittle %}Portafolio{% endblock %}
+
+{% block background %}{% if proyecto.imagenDeFondo %}{{proyecto.imagenDeFondo.url}}{% else %}{% static 'core/img/portfolio-bg.jpg' %}{% endif %}{% endblock %}
+
+{% block header %}
+    <h1>{{proyecto.título}}</h1>
+    <span class="subheading">Información del proyecto</span>
+{% endblock %}
+
+{% block contenido %}    
+    <div class="row project">
+        <!-- Imagen del proyecto -->
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{{proyecto.imagen.url}}" alt="">
+        </div>
+        <!-- Información del Proyecto -->
+        <div class="col-lg-7 col-md-8">
+            <p>{{proyecto.información|safe}}</p>
+            {% if proyecto.enlace %}
+                <p>Si quiere visitar el sitio del proyecto haga clic <a href="{{proyecto.enlace}}">aquí.</a></p>
+            {% endif %}
+        </div>
+    </div>    
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block tittle %}Acerca de{% endblock %}
+
+{% block background %}{% static 'core/img/about2-bg.jpg' %}{% endblock %}
+
+{% block header %}
+    <h1>Acerca de</h1>
+    <span class="subheading">Biografía</span>
+{% endblock %}
+
+{% block contenido %}
+<div class="row">       
+    <div class="col-md-6 col-sm-12">
+        <div class="about-info">
+            <h2>{{título}}</h2><br>                
+            <h5>{{subtítulo1}}</h5>
+            <p>{{subtítulo1_info}}</p>
+            <h5>{{subtítulo2}}</h5>
+            <p>{{subtítulo2_info}}</p>
+            <h5>{{subtítulo3}}</h5>
+            <p>{{subtítulo3_info}}</p>            
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-4 offset-lg-1">
+        <img class="img-fluid avatar" src="{% static 'core/img/about-adrian.jpg' %}" alt="">
+    </div> 
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block tittle %}Portada{% endblock %}
+
+{% block background %}{% static 'core/img/home-bg.jpg' %}{% endblock %}
+
+{% block header %}    
+    <h1>{{nombre}}</h1>
+    <span class="subheading">{{profesión}}</span>
+{% endblock %}
