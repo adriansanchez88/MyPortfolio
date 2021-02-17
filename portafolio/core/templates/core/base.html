@@ -11,6 +11,7 @@
     <!-- Se cargan los ficheros static -->
     {% load static %}
     <!-- Estilos y fuentes del template  -->
+    <link rel="shortcut icon" href="{% static 'core/portafolio.png' %}">
     <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -33,16 +34,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item {% if request.path == '/' %}active{% endif %}">
               <a class="nav-link" href='{% url "home" %}'>Portada</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if request.path == '/about/' %}active{% endif %}">
               <a class="nav-link" href='{% url "about" %}'>Acerca de</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if '/portafolio/' in request.path %}active{% endif %}">
               <a class="nav-link" href='{% url "proyectos:list" %}'>Portafolio</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if request.path == '/contact/' %}active{% endif %}">
               <a class="nav-link" href='{% url "contact" %}'>Contacto</a>
             </li>
           </ul>
@@ -80,7 +81,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <ul class="list-inline text-center">
               <li class="list-inline-item">
-                <a href="https://www.facebook.com/adriansanchez88/">
+                <a href="https://www.facebook.com/adriansanchez88/" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -88,7 +89,7 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://github.com/adriansanchez88">
+                <a href="https://github.com/adriansanchez88" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -96,7 +97,7 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/adri%C3%A1n-s%C3%A1nchez-nievares-50a310159/">
+                <a href="https://www.linkedin.com/in/adri%C3%A1n-s%C3%A1nchez-nievares-50a310159/" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>

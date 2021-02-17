@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block tittle %}Portafolio{% endblock %}
+{% block tittle %}Mis proyectos | {{proyecto.título}}{% endblock %}
 
 {% block background %}{% if proyecto.imagenDeFondo %}{{proyecto.imagenDeFondo.url}}{% else %}{% static 'core/img/portfolio-bg.jpg' %}{% endif %}{% endblock %}
 
@@ -21,7 +21,7 @@
         <div class="col-lg-7 col-md-8">
             {{proyecto.información|safe}}
             {% if proyecto.enlace %}
-                <p>Si quiere visitar el sitio del proyecto haga clic <a href="{{proyecto.enlace}}">aquí.</a></p>
+                <p>Si quiere visitar el sitio del proyecto haga clic <a href="{{proyecto.enlace}}" target="_blank">aquí.</a></p>
             {% endif %}
         </div>
     </div>    
