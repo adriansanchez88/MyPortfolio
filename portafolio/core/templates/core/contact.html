@@ -4,7 +4,7 @@
 
 {% block tittle %}Contacto{% endblock %}
 
-{% block background %}{% static 'core/img/contact-bg.jpg' %}{% endblock %}
+{% block background %}{% static 'core/img/contact2-bg.jpg' %}{% endblock %}
 
 {% block header %}
     <h1>Contacto</h1>
@@ -14,10 +14,9 @@
 {% block contenido %}
 <div class="row">    
     <div class="col-lg-8 col-md-10 mx-auto">
-        <p>{{título}}</p>
-        <br>
-        <p><b>Teléfono:</b> {{teléfono}}</p>
-        <p><b>Correo:</b> {{email}}</p>
+        <h2>{{título}}</h2><br>        
+        <p><b>Teléfono:</b> <a href="tel:{{teléfono}}">{{teléfono}}</a></p>
+        <p><b>Correo:</b> <a href="mailto:{{email}}">{{email}}</a></p>
     </div>
 </div>
 {% endblock %}

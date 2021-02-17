@@ -19,7 +19,7 @@
         </div>
         <!-- Información del Proyecto -->
         <div class="col-lg-7 col-md-8">
-            <p>{{proyecto.información|safe}}</p>
+            {{proyecto.información|safe}}
             {% if proyecto.enlace %}
                 <p>Si quiere visitar el sitio del proyecto haga clic <a href="{{proyecto.enlace}}">aquí.</a></p>
             {% endif %}

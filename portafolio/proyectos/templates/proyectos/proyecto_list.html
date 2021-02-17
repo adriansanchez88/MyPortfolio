@@ -4,7 +4,7 @@
 
 {% block tittle %}Portafolio{% endblock %}
 
-{% block background %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+{% block background %}{% static 'core/img/portfolio2-bg.jpg' %}{% endblock %}
 
 {% block header %}
     <h1>Portafolio</h1>
@@ -12,7 +12,9 @@
 {% endblock %}
 
 {% block contenido %}
-    
+    <div class="col-lg-8 col-md-10 mx-auto">
+        <h2>Algunos de mis proyectos más recientes</h2><br>
+    </div>    
     {% for proyecto in proyecto_list %}        
         <div class="row project">  	
             <!-- Imagen del proyecto -->
@@ -24,10 +26,10 @@
                 <!-- Título del proyecto -->
                 <h2 class="section-heading title">{{proyecto.título}}</h2>   
                 <!-- Descripción del proyecto -->
-                <p>{{proyecto.descripción|striptags|safe|truncatechars:"200"}}</p>
+                <p align="justify">{{proyecto.descripción|striptags|safe|truncatechars:"200"}}</p>
                 <!-- Si tiene mas información de muestra un enlace para ver mas detalles -->
                 {% if proyecto.información %}
-                    <p><a href="{% url 'proyectos:detail' proyecto.id proyecto.título|slugify %}">Más información...</a></p>
+                    <a class="more-link" href="{% url 'proyectos:detail' proyecto.id proyecto.título|slugify %}">Mas información &rarr;</a>                    
                 {% endif %}
             </div>
         </div>

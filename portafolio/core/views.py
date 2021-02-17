@@ -29,7 +29,7 @@ class ContactPageView(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {
-            'título':'Mi información de contacto es:',
+            'título':'Mi información de contacto',
             'teléfono':'+34 634 147 902', 
             'email':'adriansanchez88@gmail.com'
             })

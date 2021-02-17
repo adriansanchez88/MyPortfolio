@@ -12,16 +12,18 @@
 {% endblock %}
 
 {% block contenido %}
+<div class="col-lg-8 col-md-10 mx-auto">
+    <h2>{{título}}</h2><br>
+</div>
 <div class="row">       
     <div class="col-md-6 col-sm-12">
-        <div class="about-info">
-            <h2>{{título}}</h2><br>                
+        <div class="about-info">                            
             <h5>{{subtítulo1}}</h5>
-            <p>{{subtítulo1_info}}</p>
+            <p align="justify">{{subtítulo1_info}}</p>
             <h5>{{subtítulo2}}</h5>
-            <p>{{subtítulo2_info}}</p>
+            <p align="justify">{{subtítulo2_info}}</p>
             <h5>{{subtítulo3}}</h5>
-            <p>{{subtítulo3_info}}</p>            
+            <p align="justify">{{subtítulo3_info}}</p>            
         </div>
     </div>
     <div class="col-lg-3 col-md-4 offset-lg-1">
