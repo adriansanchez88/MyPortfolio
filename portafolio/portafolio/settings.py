@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'o6@j)uq$tq#c-xwvaa68z8!a1092o^=qc44yb@zi=(jr2@mgsa'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['adriansanchez.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -125,3 +125,9 @@ STATIC_URL = '/static/'
 # Media Files, variables para archivos media (imagenes, etc)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'adriandjangoprojects@gmail.com'
+EMAIL_HOST_PASSWORD = 'nievares88'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
