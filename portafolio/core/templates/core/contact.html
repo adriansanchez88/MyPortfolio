@@ -12,11 +12,95 @@
 {% endblock %}
 
 {% block contenido %}
-<div class="row">    
-    <div class="col-lg-8 col-md-10 mx-auto">
-        <h2>{{título}}</h2><br>        
-        <p><b>Teléfono:</b> <a href="tel:{{teléfono}}">{{teléfono}}</a></p>
-        <p><b>Correo:</b> <a href="mailto:{{email}}">{{email}}</a></p>
-    </div>
-</div>
+<style>
+@import "compass/css3";
+.errorlist{color:red;} 
+label{display:none} 
+
+</style>
+<script>
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 4000);
+</script>   
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="contact-mf">
+            <div id="contact" class="box-shadow-full">
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="title-box-2 pt-4 pt-md-0">
+                    <h2>{{título}}</h2><br>
+                  </div>
+                  <div class="more-info">
+                      <p align="justify">
+                        Puede contactar conmigo como prefiera, directamente por teléfono o email, 
+                        o llenando el formulario de contacto y esperando a que me comunique con usted.
+                      </p>
+                      <br>                      
+                      <p><b>Teléfono:</b> <a href="tel:{{teléfono}}">{{teléfono}}</a></p>
+                      <p><b>Correo:</b> <a href="mailto:{{email}}">{{email}}</a></p>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="title-box-2">
+                    <h2>Contácteme</h2><br>
+                  </div>
+                  <div>
+                        {% if 'ok' in request.GET %}
+                            <div class="alert alert-success" role="alert">
+                                Mensaje enviado correctamente.
+                            </div>
+                        {% endif %}
+                        {% if 'fail' in request.GET %}
+                            <div class="alert alert-danger" role="alert">
+                                Ha ocurrido un error y no se ha podido enviar el mensaje.
+                            </div>            
+                        {% endif %}                        
+                      <form action="" method="post" role="form" class="contactForm">
+                      {% csrf_token %}                      
+                      <div class="row">
+                        <div class="col-md-12 mb-3">                          
+                            <div class="input-group">
+                                {{form.nombre}}
+                            </div>
+                            {{form.nombre.errors}}                          
+                        </div>
+                        <div class="col-md-12 mb-3">                                  
+                            <div class="input-group">
+                                {{form.email}}
+                            </div>
+                            {{form.email.errors}}                          
+                        </div>
+                        <div class="col-md-12 mb-3">                          
+                            <div class="input-group">
+                                {{form.asunto}}
+                            </div>
+                            {{form.asunto.errors}}                          
+                        </div>
+                        <div class="col-md-12 mb-3">                          
+                            <div class="input-group">
+                                {{form.mensaje}}
+                            </div>
+                            {{form.mensaje.errors}}                          
+                        </div>
+                        <div class="col-md-12">
+                          <button type="submit" class="btn btn-outline-dark btn-block py-2">Enviar</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>               
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
 {% endblock %}
