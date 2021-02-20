@@ -10,7 +10,7 @@
 
 ## Description
 
-'portafolio' it is a website built with Django.
+'portafolio' is a website built with Django.
 
 [Back To The Top](#my-personal-portfolio)
 
