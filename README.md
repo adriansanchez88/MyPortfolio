@@ -19,8 +19,8 @@
 All files in this repository are developed using Python v3.9.1, with the following libraries:
 
     - django (v3.1.5)
-    - django-ckeditor (v6.0.0)
-    - Pillow (v8.1.0)
+    - django-ckeditor (v6.0.0): Smart WYSIWYG editor components with collaborative editing
+    - Pillow (v8.1.0): Python Imaging Library
 
 ### Installation
 
